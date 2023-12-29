@@ -35,12 +35,6 @@
     $(document).ready(function() {
       $.getJSON('https://s3.amazonaws.com/open-to-cors/assignment.json', function(data) {
         var products = data.products;
-        
-        products.sort(function(a, b) {
-          return b.popularity - a.popularity;
-        });
-        // Sort the products array in descending order based on popularity
-         
         $.each(products, function(index, product) {
           var row = $('<tr/>');
           row.append('<td>' + product.subcategory + '</td>');
